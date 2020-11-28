@@ -1,0 +1,357 @@
+/* TEXT COLOURS HEX */
+/*
+--medium-aquamarine: #3ddc97ff;
+--white: #fcfcfcff;
+--sizzling-red: #ff495cff;
+--blush: #e0607eff;
+--indigo-dye: #254e70ff;
+*/
+/* GLOBAL STYLES
+------------------------------------------*/
+/* This is used such that margins/borders are included
+    in the box sizing so they stack nicely.
+    Known as Box Model fix. */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /*FOR CODE: "Courier New", Courier, monospace */
+  color: #210203ff;
+  margin: 0;
+  font-size: 16px;
+  line-height: 135%;
+}
+
+img {
+  width: 300px;
+}
+
+a {
+  color: #254e70ff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+h2 {
+  font-size: 250%;
+}
+
+h3,h4 {
+  margin-bottom: 0;
+}
+
+h4{
+  margin-top: 0;
+}
+
+.item-details h3 + p {
+  font-style: italic;
+}
+
+.item-details h3 ~ p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.content-wrap {
+  max-width: 900px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.divider > section {
+  border-bottom: 1px dashed #254e70ff;
+  padding: 25px 0;
+}
+
+.divider > section:last-of-type {
+  border-bottom: none;
+}
+
+
+/* Profile
+------------------------------------------*/
+header {
+  background: #254e70ff;
+  color: #fcfcfcff;
+}
+header h1 {
+  color: #ff495cff;
+  font-size: 100 px;
+}
+header:link{
+  color: #fcfcfcff;
+  background-color: transparent;
+  text-decoration: none;
+}
+header p{
+  margin: 1vh auto;
+  width: 3vw auto;
+}
+header img{
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+header .header-text{
+  margin: 50px 10px;
+}
+
+
+/* Projects
+------------------------------------------*/
+.projects {
+  background: #fcfcfcff;
+}
+.projects .buttons {
+  color: #fcfcfcff;
+  background: #254e70ff;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.projects .buttons:hover {
+  color: #3ddc97ff;
+  background: rgb(37, 78, 112, 0.95);
+}
+.project-item {
+  overflow: hidden;
+}
+.project-item h3 {
+  margin-top: 0;
+}
+/* Work Experience
+------------------------------------------*/
+.work-experience {
+  background: #fcfcfcff;
+}
+/* Education
+------------------------------------------*/
+.education {
+  background: #fcfcfcff;
+  background-image: url(../images/sharon-mccutcheon-unsplash.jpg);
+  background-position: top center;
+  padding-bottom: 100px;
+}
+.education img{
+  width: 100px;
+  display: inline-block;
+}
+.education-item {
+  overflow: hidden;
+  max-width: 75%;
+}
+.education-item h3{
+  margin-top: 0;
+}
+.education-item li{
+  margin-bottom: 7px;
+}
+/* Contact Info
+------------------------------------------*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+$timing: 265ms;
+$iconColor: #fcfcfcff;// #ff495cff;  //#00b5f5; //#254e70ff; 
+$accent:  #e0607eff;//#002a8f;
+$bluefade: #0043e0;
+$gradient:  #fcfcfcff; //#254e70ff;//#00b5f5; 
+
+footer {
+  background: #254e70ff;
+  color: #fcfcfcff;
+}
+
+@mixin transformScale($size: 1) {
+  transform: scale($size);
+  -ms-transform: scale($size);
+  -webkit-transform: scale($size);
+}
+
+body {
+  background-color: rgba($iconColor, 0.05);
+}
+
+.social-container {
+  width: 100%;
+  margin: 1vh auto;
+  text-align: center;
+  align-items: center;
+}
+
+.contact-list {
+  width: auto;
+  padding: 0;
+  list-style: none;
+  margin: 1em auto;
+
+  li {
+    display: inline-block;
+    margin: 0.15em;
+    position: relative;
+    font-size: 1.8em;
+  }
+
+  em {
+    color: #254e70ff;//#fff;
+    position: absolute;
+    top: 17px;
+    left: 16.5px;
+    transition: all $timing ease-out;
+  }
+
+  a {
+    display: inline-block;
+
+    &:before {
+      @include transformScale();
+      content: " ";
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      display: block;
+      background: linear-gradient(45deg, $iconColor, $accent);
+      color:  #254e70ff;
+      transition: all $timing ease-out;
+    }
+
+    &:hover:before {
+      transform: scale(0);
+      transition: all $timing ease-in;
+    }
+
+    &:hover em {
+      @include transformScale(2.2);
+      color: $iconColor;
+      background: -webkit-linear-gradient(45deg, $iconColor, $accent);
+      background-clip: text; //added
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all $timing ease-in;
+    }
+  }
+}
+/* Responsive
+------------------------------------------*/
+@media screen and (min-width: 800px) {
+
+  .img-cropper{
+    float: left;
+    margin: 50px 20px;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25%;
+  }
+
+  header .social-container {
+    position: relative;
+    width: auto;
+    margin: 1vh auto;
+    text-align: center;
+  }
+
+  header .header-grid {
+    display: grid;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    grid-template-columns: 450px minmax(0, 1fr);
+    column-gap: 20px;
+  }
+
+  .project-item img {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .job-item {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 20px;
+  }
+
+  .education-item img {
+    float: left;
+    margin-right: 20px;
+  }  
+}
+@media screen and (max-width: 799px) {
+  h1 {
+    font-size: 250%;
+  }
+
+  h1,
+  h2 {
+    line-height: 1;
+  }
+
+  .img-cropper{
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25%;
+  }
+ 
+  .project-item img {
+    margin-bottom: 8px;
+  }
+
+  .contact-list{
+    li {
+      margin: 0.05em auto;
+      position: center;
+      font-size: 1.6em;
+    }
+    em {
+      top: 9px;
+      left: 8.5px;
+      transition: all $timing ease-out;
+    }
+  
+    a {
+      display: inline-block;
+      
+      &:before {
+        width: 40px;
+        height: 40px;
+      }
+  
+      &:hover em {
+        @include transformScale(1.5);
+      }
+    }
+  }
+}
+
+
